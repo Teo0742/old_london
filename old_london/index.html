@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Inferno di Dante nelle Arti - Ambiel Giulio Youssef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Metamorphous&family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'OldLondonCustom';
+            src: url('OldLondon.ttf') format('truetype'),
+                 url('Olondon_.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --blood-red: #4a0404;
+            --dark-red: #2a0202;
+            --charcoal: #0a0a0a;
+            --embers: #ff4500;
+        }
+
+        body {
+            background-color: var(--charcoal);
+            color: #e0e0e0;
+            font-family: 'Metamorphous', serif;
+            background-image: radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.2) 0%, transparent 80%),
+                              linear-gradient(to bottom, #000 0%, #1a0505 100%);
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .mio-carattere-gotico {
+            font-family: 'OldLondonCustom', 'MedievalSharp', serif;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+
+        .art-card {
+            background: linear-gradient(145deg, #121212 0%, #050505 100%);
+            border: 1px solid var(--blood-red);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            border-radius: 4px;
+        }
+
+        .btn-nav {
+            background: linear-gradient(to bottom, #4a0404, #2a0202);
+            border: 1px solid #630202;
+            font-family: 'MedievalSharp', cursive;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: #8b0000;
+            box-shadow: 0 0 20px var(--embers);
+            transform: translateY(-2px);
+        }
+
+        .visible-slide { display: flex; animation: fadeIn 0.8s ease forwards; }
+        .hidden-slide { display: none; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .artwork-img {
+            max-height: 400px;
+            width: auto;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            filter: sepia(15%) contrast(110%);
+        }
+
+        .label-red {
+            color: #ff4500;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #4a0404;
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background-color: #ff4500;
+            box-shadow: 0 0 10px #ff4500;
+        }
+
+        .typing::after {
+            content: '_';
+            animation: blink 0.7s infinite;
+            color: var(--embers);
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .typing-target {
+            min-height: 1.2em;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="relative z-10 min-h-screen flex flex-col">
+        <header class="p-6 text-center">
+            <h1 class="mio-carattere-gotico text-6xl md:text-8xl text-red-800 mb-1">L'Inferno nelle Arti</h1>
+            <p class="font-serif text-xs md:text-sm text-red-900 font-bold uppercase tracking-[0.4em]">Ambiel Giulio Youssef — 3 C Elettronica</p>
+        </header>
+
+        <main class="flex-grow flex items-center justify-center px-4">
+
+            <!-- Slide 0: Introduzione -->
+            <div id="slide-0" class="visible-slide w-full max-w-4xl flex-col items-center">
+                <div class="art-card p-12 md:p-20 text-center w-full border-double border-4">
+                    <h2 class="mio-carattere-gotico text-5xl mb-10 text-red-700 typing-target" data-text="Visioni della Perdizione"></h2>
+                    <p class="text-xl italic leading-relaxed mb-12 text-gray-400 font-serif max-w-2xl mx-auto typing-target" data-text='"Per me si va ne la città dolente, per me si va ne l&apos;etterno dolore, per me si va tra la perduta gente."'></p>
+                    <div class="mt-4">
+                        <button onclick="changeSlide(1)" class="btn-nav px-12 py-4 text-white uppercase tracking-widest text-sm">Varcare la Soglia</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Rodin — i1.png -->
+            <div id="slide-1" class="hidden-slide w-full max-w-6xl flex-col items-center">
+                <div class="art-card p-5 flex flex-col md:flex-row gap-6 w-full">
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <span class="label-red mb-2">1. Scultura</span>
+                        <h2 class="mio-carattere-gotico text-5xl text-red-800 mb-6 typing-target" data-text="Il Pensatore"></h2>
+                        <div class="space-y-3 text-sm mb-8">
+                            <p><span class="text-red-700 font-bold">ARTISTA:</span> <span class="typing-target" data-text="Auguste Rodin"></span></p>
+                            <p><span class="text-red-700 font-bold">ANNO:</span> <span class="typing-target" data-text="1880-1904"></span></p>
+                            <p><span class="text-red-700 font-bold">UBICAZIONE:</span> <span class="typing-target" data-text="Musée Rodin, Parigi"></span></p>
+                        </div>
+                        <p class="text-gray-400 border-l-2 border-red-900 pl-4 italic typing-target" data-text="Rappresenta Dante che riflette davanti all'Inferno, simbolo della meditazione sul destino umano. Originariamente era posto sopra la 'Porta dell'Inferno'."></p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center items-center bg-black/40 p-4">
+                        <img src="i1.png" class="artwork-img" alt="Rodin con le sue sculture">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Cinema — i2.jpg -->
+            <div id="slide-2" class="hidden-slide w-full max-w-6xl flex-col items-center">
+                <div class="art-card p-5 flex flex-col md:flex-row-reverse gap-6 w-full">
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <span class="label-red mb-2">2. Cinema Muto</span>
+                        <h2 class="mio-carattere-gotico text-5xl text-red-800 mb-6 typing-target" data-text="L'Inferno (Film)"></h2>
+                        <div class="space-y-3 text-sm mb-8">
+                            <p><span class="text-red-700 font-bold">REGISTI:</span> <span class="typing-target" data-text="Bertolini, Padovan, De Liguoro"></span></p>
+                            <p><span class="text-red-700 font-bold">ANNO:</span> <span class="typing-target" data-text="1911"></span></p>
+                            <p><span class="text-red-700 font-bold">PRODUZIONE:</span> <span class="typing-target" data-text="Milano Films"></span></p>
+                        </div>
+                        <p class="text-gray-400 border-l-2 border-red-900 pl-4 italic typing-target" data-text="Primo grande film italiano ispirato alla Divina Commedia. Celebre per gli effetti speciali innovativi che cercavano di ricreare le atmosfere dantesche."></p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center items-center bg-black/40 p-4">
+                        <img src="i2.jpg" class="artwork-img" alt="Fotogramma dal film L'Inferno 1911">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Čajkovskij — nessuna immagine -->
+            <div id="slide-3" class="hidden-slide w-full max-w-6xl flex-col items-center">
+                <div class="art-card p-5 flex flex-col md:flex-row gap-6 w-full">
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <span class="label-red mb-2">3. Musica Sinfonica</span>
+                        <h2 class="mio-carattere-gotico text-5xl text-red-800 mb-6 typing-target" data-text="Francesca da Rimini"></h2>
+                        <div class="space-y-3 text-sm mb-8">
+                            <p><span class="text-red-700 font-bold">COMPOSITORE:</span> <span class="typing-target" data-text="Pëtr Il'ič Čajkovskij"></span></p>
+                            <p><span class="text-red-700 font-bold">ANNO:</span> <span class="typing-target" data-text="1876"></span></p>
+                        </div>
+                        <p class="text-gray-400 border-l-2 border-red-900 pl-4 italic typing-target" data-text="Il brano traduce in suoni la tempesta infernale che travolge Paolo e Francesca. Una fantasia sinfonica che evoca il turbine delle anime."></p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center items-center bg-black/40 p-12 text-center">
+                        <img src="i3.jpg" class="artwork-img" style="max-height:340px;" alt="Francesca da Rimini">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Doré Incisione — i3.jpg + i6.jpg (DUE immagini) -->
+            <div id="slide-4" class="hidden-slide w-full max-w-6xl flex-col items-center">
+                <div class="art-card p-5 flex flex-col md:flex-row-reverse gap-6 w-full">
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <span class="label-red mb-2">4. Incisione</span>
+                        <h2 class="mio-carattere-gotico text-5xl text-red-800 mb-6 typing-target" data-text="Illustrazioni"></h2>
+                        <div class="space-y-3 text-sm mb-8">
+                            <p><span class="text-red-700 font-bold">ARTISTA:</span> <span class="typing-target" data-text="Gustave Doré"></span></p>
+                            <p><span class="text-red-700 font-bold">ANNO:</span> <span class="typing-target" data-text="1861"></span></p>
+                        </div>
+                        <p class="text-gray-400 border-l-2 border-red-900 pl-4 italic typing-target" data-text="Le incisioni di Doré hanno definito per generazioni l'immaginario visivo dell'Inferno dantesco, con chiaroscuri drammatici e monumentali."></p>
+                    </div>
+                    <!-- DUE immagini affiancate per Doré -->
+                    <div class="md:w-1/2 flex justify-center items-center bg-black/40 p-4 gap-3">
+                        <img src="i4.jpg" class="artwork-img" style="max-height:315px;" alt="Incisione Doré - angelo caduto">
+                        <img src="i5.jpg" class="artwork-img" style="max-height:315px;" alt="Incisione Doré - scena 1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Rossetti / Paolo e Francesca — i4.jpg (UNA sola immagine) -->
+            <div id="slide-5" class="hidden-slide w-full max-w-6xl flex-col items-center">
+                <div class="art-card p-5 flex flex-col md:flex-row gap-6 w-full">
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <span class="label-red mb-2">5. Pittura Preraffaellita</span>
+                        <h2 class="mio-carattere-gotico text-5xl text-red-800 mb-6 typing-target" data-text="Paolo e Francesca"></h2>
+                        <div class="space-y-3 text-sm mb-8">
+                            <p><span class="text-red-700 font-bold">ARTISTA:</span> <span class="typing-target" data-text="Dante Gabriel Rossetti"></span></p>
+                            <p><span class="text-red-700 font-bold">ANNO:</span> <span class="typing-target" data-text="1855"></span></p>
+                        </div>
+                        <p class="text-gray-400 border-l-2 border-red-900 pl-4 italic typing-target" data-text="Rossetti cattura l'istante fatale del bacio tra Paolo e Francesca, trasformando il dramma dantesco in un'icona del romanticismo preraffaellita."></p>
+                    </div>
+                    <!-- UNA sola immagine per Rossetti -->
+                    <div class="md:w-1/2 flex justify-center items-center bg-black/40 p-4">
+                        <img src="i6.jpg" class="artwork-img" alt="Paolo e Francesca - pittura">
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Piè di pagina -->
+        <footer class="p-8 flex flex-col items-center">
+            <div class="flex items-center gap-6">
+                <button onclick="prevSlide()" class="btn-nav w-12 h-12 flex items-center justify-center text-white text-xl">❮</button>
+                <div id="indicators" class="flex gap-4"></div>
+                <button onclick="nextSlide()" class="btn-nav w-12 h-12 flex items-center justify-center text-white text-xl">❯</button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+        let activeIntervals = [];
+
+        function createIndicators() {
+            const container = document.getElementById('indicators');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = `indicator-dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => changeSlide(i);
+                dot.style.cursor = 'pointer';
+                container.appendChild(dot);
+            }
+        }
+
+        function typeText(element, text, speed = 45) {
+            element.textContent = '';
+            element.classList.add('typing');
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    element.classList.remove('typing');
+                }
+            }, speed);
+            activeIntervals.push(interval);
+        }
+
+        function resetTyping() {
+            activeIntervals.forEach(clearInterval);
+            activeIntervals = [];
+            document.querySelectorAll('.typing-target').forEach(el => {
+                el.textContent = '';
+                el.classList.remove('typing');
+            });
+        }
+
+        function triggerSlideTyping(index) {
+            resetTyping();
+            const slide = document.getElementById(`slide-${index}`);
+            const targets = slide.querySelectorAll('.typing-target');
+            targets.forEach(target => {
+                const text = target.getAttribute('data-text');
+                if (text) typeText(target, text);
+            });
+        }
+
+        function changeSlide(index) {
+            document.getElementById(`slide-${currentSlide}`).classList.replace('visible-slide', 'hidden-slide');
+            currentSlide = index;
+            document.getElementById(`slide-${currentSlide}`).classList.replace('hidden-slide', 'visible-slide');
+            triggerSlideTyping(currentSlide);
+            const dots = document.querySelectorAll('.indicator-dot');
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+        }
+
+        function nextSlide() { changeSlide((currentSlide + 1) % totalSlides); }
+        function prevSlide() { changeSlide((currentSlide - 1 + totalSlides) % totalSlides); }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        window.onload = () => {
+            createIndicators();
+            triggerSlideTyping(0);
+        };
+    </script>
+</body>
+</html>
